@@ -10,7 +10,7 @@ android {
         minSdkVersion min_sdk_ver
         targetSdkVersion target_sdk_ver
         versionCode 1
-        versionName "1.0.0"
+        versionName version_name
         version = android.defaultConfig.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -20,13 +20,6 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
     }
-
-    buildTypes {
-        release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
 }
 
 dependencies {
@@ -35,4 +28,20 @@ dependencies {
     provided "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     provided "com.android.support:design:$support_lib_ver"
     provided "com.android.support:appcompat-v7:$support_lib_ver"
+}
+
+
+apply plugin: 'maven'
+
+uploadArchives {
+    def repo = new File(rootDir, "repository")
+    repo.mkdir()
+    repositories {
+        mavenDeployer {
+            repository url: "file://${repo.absolutePath}"
+            pom.version = version_name
+            pom.groupId = 'tech.ketc.animkt'
+            pom.artifactId = 'extension'
+        }
+    }
 }
