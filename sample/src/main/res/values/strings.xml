@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ANimKt</string>
+    <string name="alpha_animation">alpha animation</string>
+    <string name="alpha_animation2">alpha animation(animate())</string>
+    <string name="scale_animation">scale animation</string>
+    <string name="scale_animation2">scale animation(animate())</string>
+    <string name="fab_trans">fab trans</string>
+    <string name="rotate">rotate animation</string>
+    <string name="rotate_animator">rotate animation (animate())</string>
+    <string name="trans">translate animation</string>
+    <string name="trans_animator">translate animation(animate())</string>
+
+</resources>

@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:0.9.15"
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'org.jetbrains.dokka'
+
+
+
+android {
+    compileSdkVersion target_sdk_ver
+    buildToolsVersion build_tool_ver
+
+
+    defaultConfig {
+        minSdkVersion min_sdk_ver
+        targetSdkVersion target_sdk_ver
+        versionCode 1
+        versionName "1.0.0"
+        version = android.defaultConfig.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    provided fileTree(dir: 'libs', include: ['*.jar'])
+    provided "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}

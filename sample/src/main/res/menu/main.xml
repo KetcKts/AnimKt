@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/alpha"
+        android:title="@string/alpha_animation" />
+
+    <item
+        android:id="@+id/alpha_animator"
+        android:title="@string/alpha_animation2" />
+
+    <item
+        android:id="@+id/scale"
+        android:title="@string/scale_animation" />
+
+    <item
+        android:id="@+id/scale_animator"
+        android:title="@string/scale_animation2" />
+
+    <item
+        android:id="@+id/rotate"
+        android:title="@string/rotate" />
+
+    <item
+        android:id="@+id/rotate_animator"
+        android:title="@string/rotate_animator" />
+
+    <item
+        android:id="@+id/trans"
+        android:title="@string/trans" />
+
+    <item
+        android:id="@+id/trans_animator"
+        android:title="@string/trans_animator" />
+
+    <item
+        android:id="@+id/fab_trans"
+        android:title="@string/fab_trans" />
+</menu>
