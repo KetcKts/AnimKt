@@ -68,3 +68,21 @@ ViewPropertyAnimatorをDSLで扱う場合、使用するプロパティと実際
 
 ---
 
+Gradle
+
+```
+dependencies {
+    implementation 'tech.ketc.animkt:core:1.0.0'
+    implementation 'tech.ketc.animkt:extension:1.0.0'
+}
+
+repositories {
+    maven {
+        url 'http://ketckts.github.io/repoanimkt/repository'
+    }
+}
+```
+
+---
+
+[ドキュメント](https://ketckts.github.io/repoanimkt/core/index)
